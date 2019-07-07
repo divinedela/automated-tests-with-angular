@@ -8,7 +8,8 @@ export class TodosComponent {
   constructor(private service: TodoService) {}
 
   ngOnInit() { 
-    this.service.getTodos().subscribe(t => this.todos = t);
+    this.service.getTodos()
+      .subscribe((t: any[]) => this.todos = t);
   }
 
   add() { 
